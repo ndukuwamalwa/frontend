@@ -1,0 +1,25 @@
+<main>
+  <form (ngSubmit)="register(form.value)" #form="ngForm" ngNativeValidate class="form">
+    <h1>Register</h1>
+    <fieldset>
+      <label for="name">Your name</label>
+      <input type="text" name="name" ngModel required autocomplete="name" id="name">
+    </fieldset>
+    <fieldset>
+      <label for="username">Username</label>
+      <input type="text" name="username" id="username" ngModel required autocomplete="username">
+    </fieldset>
+    <p style="margin: 10px; color: red;" *ngIf="dup">Username has already been used.</p>
+    <fieldset>
+      <label for="password">Password</label>
+      <input type="password" name="password" id="password" ngModel required autocomplete="new-password">
+    </fieldset>
+    <fieldset>
+      <button class="btn"><i class="fa fa-user"></i>Register</button>
+    </fieldset>
+    <div id="account">
+      <a routerLink="/login">Login</a>
+      <a routerLink="/">Movies</a>
+    </div>
+  </form>
+</main>

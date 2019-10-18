@@ -1,0 +1,187 @@
+/* You can add global styles to this file, and also import other style files */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+:root {
+    --theme-color: rgba(10,0,0,.9);
+    --theme-text-color: #fff;
+    --link-color: #ff6600;
+}
+
+body {
+    background-color: var(--theme-color);
+}
+
+#account {
+    position: absolute;
+    right: 40px;
+    top: 10px;
+}
+
+input {
+    padding: 5px;
+    border: thin solid var(--link-color);
+    color: #fff;
+    border-radius: 2px;
+    background-color: transparent;
+}
+
+.btn {
+    color: #fff;
+    background-color: var(--link-color);
+    padding: 5px;
+    border: thin solid var(--link-color);
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+label {
+    color: #fff;
+    margin-bottom: 5px;
+}
+
+fieldset {
+    border-width: 0;
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+}
+
+fieldset > * {
+    width: 100%;
+}
+
+#account a {
+    text-decoration: none;
+    color: var(--link-color);
+    margin: 0 10px;
+}
+
+#account a:hover {
+    text-decoration: underline;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 0;
+    align-items: center;
+}
+
+.form {
+    border: thin solid #fff;
+    border-radius: 3px;
+    margin: 1em auto;
+    width: 50%;
+    padding: 20px;
+}
+
+h1 {
+    color: var(--link-color);
+    text-transform: uppercase;
+}
+
+nav {
+    display: flex;
+    flex-direction: row;
+}
+
+nav > a {
+    color: var(--theme-text-color);
+    text-decoration: none;
+    font-size: 26px;
+    margin: 20px 10px;
+}
+
+nav > a:hover {
+    text-decoration: underline;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+.actions {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+input[type=search], input[type=search] + button {
+    padding: 10px;
+}
+
+input[type=search] {
+    width: 60%;
+    background-color: transparent;
+    color: var(--theme-text-color);
+    border: thin solid var(--link-color);
+    font-size: 20px;
+}
+
+input[type=search] + button {
+    background-color: var(--link-color);
+    color: var(--theme-text-color);
+    border: thin solid var(--link-color);
+    width: 10%;
+    font-size: 18px;
+}
+
+.movies {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 0 20px;
+    margin-top: 50px;
+    justify-content: center;
+}
+
+.movie {
+    background-color: rgba(0,0,0,.5);
+    padding: 10px;
+    width: 20%;
+    margin: 5px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+}
+
+.img img {
+    width: 100%;
+}
+
+.released {
+    color: var(--link-color);
+    text-align: center;
+}
+
+.released > span {
+    color: var(--theme-text-color);
+}
+
+.title {
+    color: var(--link-color);
+    font-size: 140%;
+    text-transform: uppercase;
+    margin: 10px 0;
+}
+
+.stars {
+    margin: 10px 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.stars > span {
+    color: #fff;
+    transition-property: all;
+    transition-duration: 300ms;
+} 
+
+.stars > span:hover, .favorite {
+    color: red;
+}

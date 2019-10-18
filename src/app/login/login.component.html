@@ -1,0 +1,21 @@
+<main>
+  <form (ngSubmit)="login(form.value)" #form="ngForm" ngNativeValidate class="form">
+    <h1>Login</h1>
+    <fieldset>
+      <label for="username">Username</label>
+      <input type="text" name="username" id="username" ngModel required autocomplete="username">
+    </fieldset>
+    <fieldset>
+      <label for="password">Password</label>
+      <input type="password" name="password" id="password" ngModel required autocomplete="new-password">
+    </fieldset>
+    <p style="margin: 10px; color: red;" *ngIf="invalid">Invalid username or password</p>
+    <fieldset>
+      <button class="btn"><i class="fa fa-user"></i> Login</button>
+    </fieldset>
+    <div id="account">
+      <a routerLink="/register">Register</a>
+      <a routerLink="/">Movies</a>
+    </div>
+  </form>
+</main>

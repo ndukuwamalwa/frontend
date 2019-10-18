@@ -1,0 +1,46 @@
+<header>
+  <div id="account">
+    <a routerLink="/login" title="Login" *ngIf="!isAuthenticated()">Login</a>
+    <a routerLink="/register" title="Register" *ngIf="!isAuthenticated()">Register</a>
+    <span style="display: block; color: #fff" *ngIf="isAuthenticated()">{{user.name}} 
+      <span style="opacity: .7">({{user.username}})</span>
+    </span>
+    <a routerLink="/" title="Logout" *ngIf="isAuthenticated()" (click)="logout()">Logout</a>
+  </div>
+  <h1>Movies</h1>
+  <nav>
+    <a routerLink="/">Home</a>
+    <a routerLink="/favorites">Favorites</a>
+  </nav>
+</header>
+<main>
+  <div class="container">
+    <form class="actions" #form="ngForm">
+      <input type="search" name="search" ngModel placeholder="Search movies..." autocomplete="off"
+        (keyup)="search($event.target.value)">
+      <button><i class="fa fa-search"></i></button>
+    </form>
+    <div class="movies">
+      <article *ngFor="let movie of movies" class="movie">
+        <div class="img">
+          <img [src]="movie.poster" [alt]="movie.title" (click)="viewDetails(movie.id)">
+        </div>
+        <div class="title" (click)="viewDetails(movie.id)">{{movie.title}}</div>
+        <div class="stars">
+          <div (click)="viewDetails(movie.id)">
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+          </div>
+          <span *ngIf="movie?.favorite?.toString() === 'false'"><i class="fa fa-heart fa-3x" 
+            (click)="favourite(movie.id)"></i></span>
+          <span style="color: red" *ngIf="movie?.favorite?.toString() === 'true'"><i class="fa fa-heart fa-3x" 
+            (click)="unFavourite(movie.id)"></i></span>
+        </div>
+        <div class="released" (click)="viewDetails(movie.id)"><span>Produced: </span>{{movie.released}}</div>
+      </article>
+    </div>
+  </div>
+</main>

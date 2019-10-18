@@ -1,0 +1,25 @@
+<main>
+  <button (click)="back()"><i class="fa fa-chevron-left"></i> Back</button>
+  <div id="details">
+    <h1>{{movie.basic?.title}}</h1>
+    <aside>
+      <img [src]="movie.basic?.poster" [alt]="movie.basic?.title">
+      <div>
+        <p>
+          Released on <strong>{{movie.basic?.released}}</strong>. Total watch time <strong>{{movie.basic?.runtime}}
+            minutes</strong>.
+          <strong>{{movie.basic?.rated}}</strong> rated. Awards: <strong>{{movie.basic?.awards}}</strong>.
+        </p>
+        <p>{{ movie.plot }}</p>
+        <p>Starring: <strong>{{movie.actors?.join(',')}}</strong></p>
+        <p>Directed by: <strong>{{movie.directors?.join(',')}}</strong></p>
+        <p>Writen by: <strong>{{movie.writers?.join(',')}}</strong></p>
+        <p>Countries: <strong>{{movie.countries?.join(',')}}</strong></p>
+        <p>Language: <strong>{{movie.languages?.join(',')}}</strong></p>
+        <article id="pictures">
+          <img [src]="image" [alt]="movie.basic?.title" *ngFor="let image of movie.images">
+        </article>
+      </div>
+    </aside>
+  </div>
+</main>

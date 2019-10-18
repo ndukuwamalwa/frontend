@@ -1,0 +1,57 @@
+main {
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+}
+
+button {
+    padding: 5px;
+    width: 10%;
+    color: #fff;
+    background-color: #ff6600;
+    border-radius: 4px;
+    border: thin solid #ff6600;
+    cursor: pointer;
+}
+
+#details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+p {
+    color: #fff;
+    margin: 10px 0;
+    font-size: 24px;
+    line-height: 1.5;
+    letter-spacing: 1px;
+}
+
+p > strong {
+    color: gold;
+}
+
+aside {
+    display: flex;
+    flex-direction: row;
+}
+
+aside > div {
+    margin-left: 30px;
+}
+
+#pictures {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+
+#pictures img {
+    width: 25%;
+}
+
+h1 {
+    margin-bottom: 50px;
+}

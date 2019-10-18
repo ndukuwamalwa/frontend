@@ -1,0 +1,34 @@
+<header>
+  <h1>Your Favorites</h1>
+  <nav>
+    <a routerLink="/">Home</a>
+  </nav>
+</header>
+<main>
+  <div class="container">
+    <form class="actions" #form="ngForm">
+      <input type="search" name="search" ngModel placeholder="Search movies..." autocomplete="off"
+        (keyup)="search($event.target.value)">
+      <button><i class="fa fa-search"></i></button>
+    </form>
+    <div class="movies">
+      <article *ngFor="let movie of movies" class="movie">
+        <div class="img" (click)="viewDetails(movie.id)">
+          <img [src]="movie.poster" alt="">
+        </div>
+        <div class="title" (click)="viewDetails(movie.id)">{{movie.title}}</div>
+        <div class="stars">
+          <div (click)="viewDetails(movie.id)">
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+          </div>
+          <span style="color: red"><i class="fa fa-close fa-3x" (click)="unFavourite(movie.id)"></i></span>
+        </div>
+        <div class="released" (click)="viewDetails(movie.id)"><span>Produced: </span>{{movie.released}}</div>
+      </article>
+    </div>
+  </div>
+</main>
