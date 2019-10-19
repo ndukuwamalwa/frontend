@@ -12,6 +12,7 @@ export class MoviesComponent implements OnInit {
   allMovies: any[] = [];
   favourites: number[] = JSON.parse(window.sessionStorage.getItem('favorite'));
   user = JSON.parse(window.sessionStorage.getItem("user"));
+  isLoading: boolean = false;
 
   constructor(private movieService: MoviesService, private router: Router) { }
 
@@ -20,6 +21,7 @@ export class MoviesComponent implements OnInit {
   }
 
   fetch() {
+    this.isLoading = true;
     this.movieService.list(1, 50, "")
       .subscribe(res => {
         if (this.isAuthenticated()) {
@@ -38,7 +40,10 @@ export class MoviesComponent implements OnInit {
         this.movies = res;
         this.allMovies = res;
         window.sessionStorage.movies = JSON.stringify(this.movies);
+        this.isLoading = false;
       }, err => {
+        this.isLoading = false;
+        alert("Problem getting movies.");
       });
   }
 

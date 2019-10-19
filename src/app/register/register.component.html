@@ -14,8 +14,9 @@
       <label for="password">Password</label>
       <input type="password" name="password" id="password" ngModel required autocomplete="new-password">
     </fieldset>
+    <div class="loader" *ngIf="isLoading"></div>
     <fieldset>
-      <button class="btn"><i class="fa fa-user"></i>Register</button>
+      <button class="btn" [disabled]="isLoading"><i class="fa fa-user"></i>Register</button>
     </fieldset>
     <div id="account">
       <a routerLink="/login">Login</a>

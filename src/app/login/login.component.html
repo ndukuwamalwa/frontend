@@ -10,8 +10,9 @@
       <input type="password" name="password" id="password" ngModel required autocomplete="new-password">
     </fieldset>
     <p style="margin: 10px; color: red;" *ngIf="invalid">Invalid username or password</p>
+    <div class="loader" *ngIf="isLoading"></div>
     <fieldset>
-      <button class="btn"><i class="fa fa-user"></i> Login</button>
+      <button class="btn" [disabled]="isLoading"><i class="fa fa-user"></i> Login</button>
     </fieldset>
     <div id="account">
       <a routerLink="/register">Register</a>

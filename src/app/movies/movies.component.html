@@ -20,7 +20,8 @@
         (keyup)="search($event.target.value)">
       <button><i class="fa fa-search"></i></button>
     </form>
-    <div class="movies">
+    <div class="loader" *ngIf="isLoading"></div>
+    <div class="movies" *ngIf="!isLoading">
       <article *ngFor="let movie of movies" class="movie">
         <div class="img">
           <img [src]="movie.poster" [alt]="movie.title" (click)="viewDetails(movie.id)">

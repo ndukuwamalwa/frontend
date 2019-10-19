@@ -12,6 +12,9 @@
       <button><i class="fa fa-search"></i></button>
     </form>
     <div class="movies">
+      <p *ngIf="movies.length === 0" style="color: #fff; font-size: 20px">
+        You don't have any fovorites, click on the favorite <i class="fa fa-heart"></i>
+       icon on a movie to add it to your favorite list.</p>
       <article *ngFor="let movie of movies" class="movie">
         <div class="img" (click)="viewDetails(movie.id)">
           <img [src]="movie.poster" alt="">

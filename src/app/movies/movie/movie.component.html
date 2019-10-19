@@ -1,6 +1,7 @@
 <main>
   <button (click)="back()"><i class="fa fa-chevron-left"></i> Back</button>
-  <div id="details">
+  <div class="loader" *ngIf="isLoading"></div>
+  <div id="details" *ngIf="!isLoading">
     <h1>{{movie.basic?.title}}</h1>
     <aside>
       <img [src]="movie.basic?.poster" [alt]="movie.basic?.title">

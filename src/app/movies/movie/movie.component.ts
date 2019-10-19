@@ -10,14 +10,17 @@ import { MoviesService } from 'src/app/services/movies.service';
 export class MovieComponent implements OnInit {
 
   movie: any = {};
+  isLoading: boolean = false;
 
   constructor(private route: ActivatedRoute, private movieService: MoviesService) { }
 
   ngOnInit() {
     this.route.queryParams.subscribe(params => {
       if (params.id) {
+        this.isLoading = true;
         this.movieService.details(params.id).subscribe(res => {
           this.movie = res;
+          this.isLoading = false;
         });
       }
     });

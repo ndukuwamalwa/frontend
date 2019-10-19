@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 export class RegisterComponent implements OnInit {
 
   dup: boolean = false;
+  isLoading: boolean = false;
 
   constructor(private userService: UserService, private router: Router) { }
 
@@ -16,14 +17,17 @@ export class RegisterComponent implements OnInit {
   }
 
   register(details) {
-    this.userService.create(details.name, details.username, details.password)
+    this.isLoading = true;
+    this.userService.create(details.name, details.username.toLowerCase(), details.password)
     .subscribe(res => {
       window.sessionStorage.user = JSON.stringify(res.user);
       window.sessionStorage.token = res.token;
       window.sessionStorage.favorite = JSON.stringify(res.favorite);
+      this.isLoading = false;
       this.router.navigateByUrl(`/`);
     }, err => {
       this.dup = true;
+      this.isLoading = false;
     });
   }
 

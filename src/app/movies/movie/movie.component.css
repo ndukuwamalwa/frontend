@@ -6,7 +6,6 @@ main {
 
 button {
     padding: 5px;
-    width: 10%;
     color: #fff;
     background-color: #ff6600;
     border-radius: 4px;
@@ -34,7 +33,6 @@ p > strong {
 
 aside {
     display: flex;
-    flex-direction: row;
 }
 
 aside > div {
@@ -54,4 +52,46 @@ aside > div {
 
 h1 {
     margin-bottom: 50px;
+}
+
+@media all and (min-width: 900px) {
+    aside {
+        flex-direction: row;
+    }
+
+    button {
+        width: 10%;
+    }
+}
+
+@media all and (max-width: 809px) and (min-width: 479px) {
+   aside {
+       flex-direction: column;
+   }
+
+   button {
+    margin-bottom: 20px;
+   }
+}
+
+@media all and (max-width: 480px) {
+    aside {
+        flex-direction: column;
+    }
+
+    aside > img {
+       height: 400px;
+    } 
+
+    button {
+        margin-bottom: 20px;
+    }
+
+    #pictures {
+        flex-wrap: wrap;
+    }
+
+    #pictures img {
+        width: 50%;
+    }
 }
