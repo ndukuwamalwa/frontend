@@ -1,4 +1,11 @@
-# Frontend
+# Movies
+This is the front end of the movies application build with angular
+
+# Live preview
+Find the working site here : https://justinwamalwa.netlify.com
+
+# Image rights
+Note that the images used may be copyrighted materials. Even though I haven't given formal credits and appreciation to the owners, I respect and appreciate the work and efforts used in creating such valuable materials.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.3.
 
